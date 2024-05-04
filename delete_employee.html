@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Xóa nhân viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        a{background-color: chartreuse; border-radius: 5px; cursor: pointer; padding: 10px}
+    </style>
+</head>
+<body>
+    <h1>Xóa nhân viên</h1>
+    <form action="/delete_employee" method="post">
+        <label for="id">ID của nhân viên:</label>
+        <input type="text" id="id" name="id"><br>
+        <button type="submit", href="D:\hoc_tai_fpt\hoc_tai_fpt_afterschool\module3\bai_tieu_luan\quan_ly_nv.py">Xóa nhân viên</button>
+    </form>
+</body>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thêm nhân viên</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Thêm nhân viên</h1>
+        <form action="/add_employee" method="post">
+            <!-- Form content here -->
+        </form>
+        <a  href="D:\hoc_tai_fpt\hoc_tai_fpt_afterschool\module3\bai_tieu_luan\templates\index.html", name="home">Home</a>
+    </div>
+</body>
+</html>
+
+</html>

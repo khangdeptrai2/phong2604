@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <title>Thêm nhân viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #efe6ec;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #a1e885;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        a{background-color: chartreuse; border-radius: 5px; cursor: pointer; padding: 10px}
+        select{
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+    </style>
+
+<body>
+    <h1>Thêm nhân viên</h1>
+    <form action="/add_employee" method="post">
+        <label for="name">Tên:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="age">Tuổi:</label>
+        <input type="text" id="age" name="age"><br>
+        <label for="job">Nghề nghiệp:</label>
+        <select name="job", id="job">
+            <option>marketing</option>
+            <option>labor</option>
+            <option>guard</option>
+            <option>designer</option>
+            <option>engineer</option>
+            <option>accountant</option>
+            <option>receptionist</option>
+        </select>
+        <label for="salary">Lương:</label>
+        <input type="text" id="salary" name="salary"><br>
+        <button type="submit", href="\add_employee">Thêm nhân viên</button>
+    </form>
+    <title>Thêm nhân viên</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <div class="content">
+        <h1>Thêm nhân viên</h1>
+        <form action="/add_employee" method="post">
+            <!-- Form content here -->
+        </form>
+
+        <a href="D:\hoc_tai_fpt\hoc_tai_fpt_afterschool\module3\bai_tieu_luan\templates\index.html", name="home">Home</a>
+    </div>
+    <py-script>
+        if request.method == 'POST':
+            # Nhận dữ liệu từ biểu mẫu
+            name = request.form['name']
+            age = int(request.form['age'])
+            job = request.form['job']
+            salary = int(request.form['salary'])
+            # Thêm nhân viên vào cơ sở dữ liệu
+            add_employee_query = "INSERT INTO nhanvien (name, age, job, salary) VALUES (%s, %s, %s, %s)"
+            cursor.execute(add_employee_query, (name, age, job, salary))
+            connection.commit()
+            return "Nhân viên đã được thêm thành công."
+            return render_template('add_employee.html')
+    </py-script>
+</body>
+
+</html>
